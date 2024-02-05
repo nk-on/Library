@@ -16,10 +16,16 @@ function addBookToLibrary(event){
     libraryBooks.push(bookObj);
     const lastBook = libraryBooks[libraryBooks.length-1];
     librarySection.innerHTML += 
-        `<div>
-           <h2>Title:<span>${lastBook.title}</span></h2>
-           <h2>Author:<span>${lastBook.author}</span></h2>
-           <h2>Pages:<span>${lastBook.pages}</span></h2>
+        `<div class = "book-item">
+           <div>
+             <h3>Title:</h3><span>${lastBook.title}</span>
+           </div>
+           <div>
+              <h3>Author:</h3><span>${lastBook.author}</span>
+           </div>
+           <div>
+              <h3>Author:</h3><span>${lastBook.pages}</span>
+           </div>
         </div>`
     console.log(libraryBooks)
     event.preventDefault();

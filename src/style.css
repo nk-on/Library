@@ -67,3 +67,28 @@ form {
     padding: 10px;
     color: var(--color-white);
 }
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.library{
+    margin-top: 15vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(4,1fr);
+}
+.book-item{
+    background-color: var(--white);
+    padding: 30px;
+    box-shadow: 4px 16px 33px 4px rgba(0,0,0,0.75);
+}
+.book-item div {
+    display: flex;
+    align-items: center;
+    gap:10px;
+}
+.book-item div span{
+    font-size: 20px;
+}
