@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
     <link rel="stylesheet" href="src/style.css">
 </head>
+
 <body>
     <header>
         <h1>The odin library</h1>
     </header>
+    <section class="add-book-section">
+        <button class="add-book-button">+ Add book</button>
+        <dialog class="pop-up">
+            <form>
+                <input type="text" placeholder="Book-title">
+                <input type="text" placeholder="Author">
+                <input type="number" placeholder="Page number">
+                <button class = "submit-button">Submit</button>
+            </form>
+        </dialog>
+    </section>
+    <script src="src/script.js"></script>
 </body>
+
 </html>

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -13,15 +14,56 @@
     --light-green: #9fff9c;
     --light-red: #ff9c9c;
 }
-body{
+
+body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--grey);
 }
-header{
+
+header {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--white);
     height: 10vh;
-    box-shadow: 0px 19px 5px -3px rgba(0,0,0,0.11);
+    box-shadow: 0px 19px 5px -3px rgba(0, 0, 0, 0.11);
+}
+
+.add-book-section {
+    margin-top: 10vh;
+    display: flex;
+    justify-content: center;
+}
+
+.add-book-button {
+    background-color: var(--grey);
+    border: 1px solid var(--black);
+    color: var(--black);
+    font-weight: 400;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.pop-up {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--primary-color);
+    margin: 20% auto;
+    width: 30%;
+    height: 20%;
+    padding: 10px;
+    color: var(--color-white);
 }
