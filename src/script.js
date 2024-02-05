@@ -14,14 +14,14 @@ function Book(title,author,pages){
 function addBookToLibrary(event){
     const bookObj = new Book(titleInput.value,authorInput.value,pageNumberInput.value);
     libraryBooks.push(bookObj);
-    libraryBooks.forEach((libraryBook)=>{
-        librarySection.innerHTML = 
+    const lastBook = libraryBooks[libraryBooks.length-1];
+    librarySection.innerHTML += 
         `<div>
-           <h2>Title:<span>${libraryBook.title}</span></h2>
-           <h2>Author:<span>${libraryBook.author}</span></h2>
-           <h2>Pages:<span>${libraryBook.pages}</span></h2>
+           <h2>Title:<span>${lastBook.title}</span></h2>
+           <h2>Author:<span>${lastBook.author}</span></h2>
+           <h2>Pages:<span>${lastBook.pages}</span></h2>
         </div>`
-    });
+    console.log(libraryBooks)
     event.preventDefault();
     popUp.close();
 }
