@@ -42,10 +42,6 @@ function addBookToLibrary(event) {
               <button class = "remove-button">Remove Book</button>
            </div>
         </div>`
-    const removeButtons = document.querySelectorAll(".remove-button");
-    removeButtons.forEach((button)=>{
-        button.addEventListener("click",removeBook)
-    })
     const readStatusButtons = document.querySelectorAll(".read-status");
     readStatusButtons.forEach((button)=>{
         button.addEventListener("click",changeReadStatus)
