@@ -42,6 +42,10 @@ function addBookToLibrary(event) {
               <button class = "remove-button">Remove Book</button>
            </div>
         </div>`
+    const removeBookButtons = document.querySelectorAll(".remove-button");
+    removeBookButtons.forEach((book)=>{
+        book.addEventListener("click",removeBook)
+    })
     const readStatusButtons = document.querySelectorAll(".read-status");
     readStatusButtons.forEach((button)=>{
         button.addEventListener("click",changeReadStatus)
@@ -49,6 +53,10 @@ function addBookToLibrary(event) {
     event.preventDefault();
     popUp.close();
 };
+function removeBook(){
+    const bookForRemoval = this.parentNode.parentNode;
+    librarySection.removeChild(bookForRemoval)
+}
 function changeReadStatus() {
     if (this.classList.contains("Checked")) {
         this.textContent = "Not Read";
