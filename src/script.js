@@ -37,10 +37,19 @@ function addBookToLibrary(event) {
            <div>
               <h3>Pages:</h3><span>${lastBook.pages}</span>
            </div>
-           <button class="read-status ${lastBook.determineReadStatusColor()}">${lastBook.readStatus}</button>
+           <div class = "buttons">
+              <button class="read-status ${lastBook.determineReadStatusColor()}">${lastBook.readStatus}</button>
+              <button class = "remove-button">Remove Book</button>
+           </div>
         </div>`
-    const readStatusButton = document.querySelector(".read-status");
-    readStatusButton.addEventListener("click", changeReadStatus)
+    const removeButtons = document.querySelectorAll(".remove-button");
+    removeButtons.forEach((button)=>{
+        button.addEventListener("click",removeBook)
+    })
+    const readStatusButtons = document.querySelectorAll(".read-status");
+    readStatusButtons.forEach((button)=>{
+        button.addEventListener("click",changeReadStatus)
+    })
     event.preventDefault();
     popUp.close();
 };
