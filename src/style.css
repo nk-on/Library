@@ -100,9 +100,9 @@ main{
     background-color: var(--light-green);
     border: none;
 }
-.checked{
+.Checked{
     background-color: var(--light-green);
 }
-.haveNotChecked{
+.unChecked{
     background-color: var(--light-red);
 }

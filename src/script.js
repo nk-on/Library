@@ -4,26 +4,25 @@ const librarySection = document.querySelector(".library")
 const titleInput = document.querySelector(".title-input");
 const authorInput = document.querySelector(".Author-input");
 const pageNumberInput = document.querySelector(".pageNumber-input");
-const readStatusInput= document.querySelector("#read-status");
+const readStatusInput = document.querySelector("#read-status");
 const submitButton = document.querySelector(".submit-button");
-const readStatus = document.querySelector(".read-status")
+const readStatusButton = document.querySelector(".read-status");
 const libraryBooks = [];
 function Book(title, author, pages, readStatus) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.readStatus = readStatus;
-    this.determineReadStatus = function(){
-        if(this.readStatus === "Have read"){
+    this.determineReadStatusColor = function () {
+        if (this.readStatus === "Read") {
             return "Checked";
-        }else{
-            return "haveNotChecked";
+        } else {
+            return "unChecked";
         }
     }
 };
 function addBookToLibrary(event) {
-    console.log(readStatusInput.checked)
-    const readStatus = (readStatusInput.checked) ? "Have read":"Have not read";
+    const readStatus = (readStatusInput.checked) ? "Read" : "Not Read";
     const bookObj = new Book(titleInput.value, authorInput.value, pageNumberInput.value, readStatus);
     libraryBooks.push(bookObj);
     const lastBook = libraryBooks[libraryBooks.length - 1];
@@ -40,10 +39,23 @@ function addBookToLibrary(event) {
            </div>
            <button class="read-status ${lastBook.determineReadStatusColor()}">${lastBook.readStatus}</button>
         </div>`
+    const readStatusButton = document.querySelector(".read-status");
+    readStatusButton.addEventListener("click", changeReadStatus)
     event.preventDefault();
     popUp.close();
 };
+function changeReadStatus() {
+    if (this.classList.contains("Checked")) {
+        this.textContent = "Not Read";
+        this.classList.remove("Checked");
+        this.classList.add("unChecked");
+    } else {
+        this.textContent = "Read";
+        this.classList.remove("unChecked");
+        this.classList.add("Checked");
+    }
+};
 addBookButton.addEventListener("click", () => {
     popUp.showModal();
-})
+});
 submitButton.addEventListener("click", addBookToLibrary);
