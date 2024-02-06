@@ -92,3 +92,17 @@ main{
 .book-item div span{
     font-size: 20px;
 }
+.read-status{
+    cursor: pointer;
+    font-weight: 400;
+    margin:0 auto;
+    padding: 10px  50px;
+    background-color: var(--light-green);
+    border: none;
+}
+.checked{
+    background-color: var(--light-green);
+}
+.haveNotChecked{
+    background-color: var(--light-red);
+}
