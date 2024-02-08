@@ -71,6 +71,9 @@ button {
     padding: 10px;
     border: none;
 }
+.status-form{
+    display: flex;
+}
 
 main {
     display: flex;
