@@ -56,7 +56,14 @@ function addBookToLibrary(event) {
     const readStatusButtons = document.querySelectorAll(".read-status");
     readStatusButtons.forEach((button)=>{
         button.addEventListener("click",changeReadStatus)
-    })
+    });
+    //emptying input fields from information which user entered when they created previous book
+    const userAlreadyEnteredData = titleInput.value.length > 0 ||  authorInput.value.length > 0 || pageNumberInput.value.length > 0;
+    if(userAlreadyEnteredData){
+        titleInput.value = "";
+        authorInput.value = "";
+        pageNumberInput.value = "";
+    };
     event.preventDefault();
     modal.close();
 };
