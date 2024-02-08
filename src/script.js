@@ -13,6 +13,9 @@ function Book(title, author, pages, readStatus) {
     this.author = author;
     this.pages = pages;
     this.readStatus = readStatus;
+    /* Method which returns relavant string based on readstatus
+       which will be used as a class of button element
+    */
     this.determineReadStatusColor = function () {
         if (this.readStatus === "Read") {
             return "Checked";
@@ -22,14 +25,18 @@ function Book(title, author, pages, readStatus) {
     }
 };
 function addBookToLibrary(event) {
+    //Determining readStatus of book based if user checked button
     const readStatus = (readStatusInput.checked) ? "Read" : "Not Read";
+    //Blocking user if they left empty fields
     const userLeftEmptyForm = titleInput.value.length === 0 ||  authorInput.value.length === 0 || pageNumberInput.value.length === 0;
     if(userLeftEmptyForm){
         return;
     };
+    //Creating book objects based on Book constructor and pushing them to libraryBooks array
     const bookObj = new Book(titleInput.value, authorInput.value, pageNumberInput.value, readStatus);
     libraryBooks.push(bookObj);
     const lastBook = libraryBooks[libraryBooks.length - 1];
+    //Adding last element of libraryBooks array inside inneHTML
     librarySection.innerHTML +=
         `<div class = "book-item">
            <div>
