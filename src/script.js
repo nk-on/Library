@@ -16,16 +16,12 @@ function Book(title, author, pages, readStatus) {
     /* Method which returns relavant string based on readstatus
        which will be used as a class of button element
     */
-    this.determineReadStatusColor = function () {
-        if (this.readStatus === "Read") {
-            return "Checked";
-        } else {
-            return "unChecked";
-        }
+    this.determineReadStatusClass = function () {
+        return (this.readStatus === "Read") ? "Checked":"unChecked"
     }
 };
 function addBookToLibrary(event) {
-    //Determining readStatus of book based if user checked button
+    //Determining readStatus of book based on  whether user checked button
     const readStatus = (readStatusInput.checked) ? "Read" : "Not Read";
     //Blocking user if they left empty fields
     const userLeftEmptyForm = titleInput.value.length === 0 ||  authorInput.value.length === 0 || pageNumberInput.value.length === 0;
@@ -49,7 +45,7 @@ function addBookToLibrary(event) {
               <h3>Pages:</h3><span>${lastBook.pages}</span>
            </div>
            <div class = "buttons">
-              <button class="read-status ${lastBook.determineReadStatusColor()}">${lastBook.readStatus}</button>
+              <button class="read-status ${lastBook.determineReadStatusClass()}">${lastBook.readStatus}</button>
               <button class = "remove-button">Remove Book</button>
            </div>
         </div>`
