@@ -1,5 +1,5 @@
 const addBookButton = document.querySelector(".add-book-button");
-const popUp = document.querySelector(".pop-up");
+const modal = document.querySelector(".modal");
 const librarySection = document.querySelector(".library")
 const titleInput = document.querySelector(".title-input");
 const authorInput = document.querySelector(".Author-input");
@@ -58,7 +58,7 @@ function addBookToLibrary(event) {
         button.addEventListener("click",changeReadStatus)
     })
     event.preventDefault();
-    popUp.close();
+    modal.close();
 };
 function removeBook(){
     const bookForRemoval = this.parentNode.parentNode;
@@ -76,6 +76,6 @@ function changeReadStatus() {
     }
 };
 addBookButton.addEventListener("click", () => {
-    popUp.showModal();
+    modal.showModal();
 });
 submitButton.addEventListener("click", addBookToLibrary);

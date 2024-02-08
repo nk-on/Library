@@ -46,7 +46,7 @@ header {
     align-items: center;
 }
 
-.pop-up {
+.modal {
     border: none;
     min-width: 50%;
     height: 50%;
