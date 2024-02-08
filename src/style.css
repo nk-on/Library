@@ -29,11 +29,6 @@ header {
     box-shadow: 0px 19px 5px -3px rgba(0, 0, 0, 0.11);
 }
 
-.add-book-section {
-    margin-top: 10vh;
-    display: flex;
-    justify-content: center;
-}
 
 .add-book-button {
     background-color: var(--grey);
@@ -44,14 +39,19 @@ header {
     cursor: pointer;
 }
 
+.add-book-section {
+    margin-top: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .pop-up {
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    min-width: 50%;
+    height: 50%;
+    margin: auto;
+    background-color: var(--white);
 }
 
 form {
@@ -60,12 +60,16 @@ form {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    background-color: var(--primary-color);
     margin: 20% auto;
-    width: 30%;
-    height: 20%;
     padding: 10px;
-    color: var(--color-white);
+    color: var(--black);
+}
+
+form input,
+button {
+    box-shadow: 3px 16px 10px 0px rgba(0, 0, 0, 0.75);
+    padding: 10px;
+    border: none;
 }
 
 main {
@@ -121,9 +125,7 @@ main {
 @media only screen and (max-width: 600px) {
     .library {
         margin-top: 15vh;
-        /* display: grid;
-        justify-content: center;
-        align-items: center; */
+        display: grid;
         grid-template-columns: repeat(1, 1fr);
         gap: 10px;
     }
