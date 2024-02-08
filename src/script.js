@@ -23,7 +23,8 @@ function Book(title, author, pages, readStatus) {
 };
 function addBookToLibrary(event) {
     const readStatus = (readStatusInput.checked) ? "Read" : "Not Read";
-    if(titleInput.value.length === 0 ||  authorInput.value.length === 0 || pageNumberInput.value.length === 0){
+    const userLeftEmptyForm = titleInput.value.length === 0 ||  authorInput.value.length === 0 || pageNumberInput.value.length === 0;
+    if(userLeftEmptyForm){
         return;
     };
     const bookObj = new Book(titleInput.value, authorInput.value, pageNumberInput.value, readStatus);
